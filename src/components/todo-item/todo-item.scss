@@ -1,0 +1,106 @@
+.todo-item {
+    font-size: 18px;
+    color: #333;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    .text {
+        display: block;
+        width: 100%;
+        padding: 15px;
+    }
+    .buttons {
+        display: block;
+        width: 100%;
+        text-align: right;
+        padding: 15px;
+        border-top: 1px solid #ddd;
+    }
+    button {
+        display: inline-block;
+        font-size: 14px;
+        outline: 0;
+        margin-left: 15px;
+        svg {
+            width: 20px;
+            height: auto;
+            fill: #333;
+            transition: 0.25s;
+        }
+    }
+    .remove-button {
+        &:hover svg {
+            fill: tomato;
+        }
+    }
+}
+
+.todo-item__focus {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: auto;
+    background: transparent;
+    animation-name: fadeIn;
+    animation-duration: 0.25s;
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.3);
+    }
+    &-inner {
+        width: 280px;
+        z-index: 2;
+        background: #fff;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation-name: slideIn;
+        animation-duration: 0.25s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.25s;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.completed {
+    text-decoration: line-through;
+    .complete-button {
+        svg {
+            fill: #4CAF50;
+        }
+    }
+    input {
+        text-decoration: line-through;
+    }
+}

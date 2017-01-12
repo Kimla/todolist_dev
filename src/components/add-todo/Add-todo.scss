@@ -1,0 +1,59 @@
+.add-todo__input {
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.add-todo__button {
+    background: #2196F3;
+}
+
+.cancel__button {
+    background: #F44336;
+}
+
+.add-todo__wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: auto;
+    background: transparent;
+    animation-name: fadeIn;
+    animation-duration: 0.25s;
+    .buttons {
+        float: right;
+    }
+    .button {
+        padding: 12px 30px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        float: left;
+        margin-left: 15px;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.3);
+    }
+    .add-todo {
+        z-index: 2;
+        background: #fff;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation-name: slideIn;
+        animation-duration: 0.25s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.25s;
+        padding: 30px;
+        min-width: 300px;
+    }
+}

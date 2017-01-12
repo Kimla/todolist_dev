@@ -1,0 +1,35 @@
+.todolist-wrapper {
+    width: 530px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.todolist {
+    list-style: none;
+    padding: none;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.todolist__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+        margin: 0;
+    }
+}
+
+.show-add-todo-button {
+    outline: 0;
+    svg {
+        fill: #333;
+        width: 30px;
+        transition: 0.25s;
+    }
+    &:hover svg {
+        fill: #2196F3;
+    }
+}
